@@ -1,0 +1,13 @@
+extends layouts/default.pug
+
+block content
+    h1 measuringLight
+    main
+        a(href="/measurement/sensors", class="tile") 
+            h2 Sensors
+            p Live measurements from each sensor separately
+        a(href="/measurement/average", class="tile")
+            h2 Average
+            p Live average of sensors summed up
+    footer
+        a(href="https://github.com/burzynnn/measuringLight") repo

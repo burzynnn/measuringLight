@@ -1,0 +1,53 @@
+extends layouts/default.pug
+
+block css
+    link(rel="stylesheet", href="/css/alertify/alertify.min.css", type="text/css")
+    link(rel="stylesheet", href="/css/alertify/themes/default.min.css", type="text/css")
+
+block script
+    script.
+        const titlePage = !{JSON.stringify(title)};
+        const queries = !{JSON.stringify(queries)};
+
+block content
+    nav
+        ul
+            li
+                button(class="button" id="left") <
+            li
+                h1 #{title}
+            li
+                form(onsubmit="return false;" id="form")
+                    input(type="radio", name="side", value="L" id="radio-left" class="radio" required)
+                    label(for="radio-left") Left side
+                    input(type="radio", name="side", value="R" id="radio-right" class="radio")
+                    label(for="radio-right") Right side
+                    input(type="radio", name="side", value="ALL" id="radio-all" class="radio")
+                    label(for="radio-all") All
+                    label(for="text-weather") Weather:
+                    input(type="text", name="weather", id="text-weather" class="text" placeholder="e.g. Sunny" required)
+                    label(for="text-class") Class:
+                    input(type="text", name="class", id="text-class" class="class" placeholder="e.g. 105B" required)
+                    button(id="submit" class="button-submit" type="submit") Send email
+            li
+                button(class="button" id="right") >
+    main
+        section(class="large")
+            -for (var i = 0; i < 16; i++) 
+                .container
+                    canvas(id="chart"+(i+1), class="canvas")
+        section(class="additional")
+            -for (var k = 16; k < 22; k++) 
+                .container
+                    canvas(id="chart"+(k+1), class="canvas")
+        
+    script
+        include ../js/libraries/socket.io.js
+    script
+        include ../js/libraries/Chart.bundle.min.js
+    script
+        include ../js/libraries/chartjs-plugin-datalabels.min.js
+    script
+        include ../js/libraries/alertify.min.js
+    script
+        include ../js/index.js
