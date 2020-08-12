@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  node:
+    build:
+      context: ./app
+      dockerfile: Dockerfile.dev
+    container_name: app
+    volumes:
+      - ./app:/usr/src/app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+  mongodb:
+    image: mongo:latest
+    container_name: database
+    restart: unless-stopped
+    ports:
+      - 27017:27017
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: broker
+    ports:
+      - 1883:1883
+  nginx:
+    image: nginx:latest
+    container_name: proxy
+    ports:
+      - 80:80
+
+volumes:
+  db_data:
+    driver: local

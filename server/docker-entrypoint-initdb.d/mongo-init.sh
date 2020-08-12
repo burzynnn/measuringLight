@@ -1,0 +1,1 @@
+mongo admin -u $MONGO_INITDB_ROOT_USERNAME -p $MONGO_INITDB_ROOT_PASSWORD --eval "db.getSiblingDB('$MONGO_DB').createUser({user: '$MONGO_USER', pwd: '$MONGO_PWD', roles: [{role: 'readWrite', db: '$MONGO_DB'}]});"
