@@ -28,7 +28,7 @@ Będąc w głównym folderze repozytorium (/measuringLight) należy:
 > SRV\_PORT=(dowolny port, który nie jest obecnie używany przez inną aplikację, np. '3000')  
 > BROKER\_ADDR=(adres połączenia z MQTT Broker, w obecnym ustawieniu aplikacji zalecamy 'mqtt://broker:1883')  
 > NODEMAILER\_ACC=(adres email konta Gmail, które będzie użyte do wysyłania wiadomości email)  
-> NODEMAILER\_PWD=(hasło konta Gmail. w przypadku aktywowanej dwuetapowej weryfikacji wymagane jest wygenerowanie hasła z zgodnie z tym [https://support.google.com/accounts/answer/185833?hl=pl](poradnikiem))  
+> NODEMAILER\_PWD=(hasło konta Gmail. w przypadku aktywowanej dwuetapowej weryfikacji wymagane jest wygenerowanie hasła z zgodnie z tym [poradnikiem](https://support.google.com/accounts/answer/185833?hl=pl))  
 > NODEMAILER\_REC=(adres email, do którego będą kierowane wiadomości z raportami)  
 > MONGO\_INITDB\_ROOT\_USERNAME=(nazwa użytkownika głównego konta dla MongoDB)  
 > MONGO\_INITDB\_ROOT\_PASSWORD=(hasło głównego konta dla MongoDB)  
@@ -43,5 +43,5 @@ Będąc w głównym folderze repozytorium (/measuringLight) należy:
 
 ### Uwagi
 
-*   Dostęp do Internetu w sieci pozwala na wysyłanie wiadomości E-mail za pomocą [https://github.com/nodemailer/nodemailer](Nodemailer)
+*   Dostęp do Internetu w sieci pozwala na wysyłanie wiadomości E-mail za pomocą [Nodemailer](https://github.com/nodemailer/nodemailer)
 *   Serwer był tworzony oraz działał tylko na systemie Linux (Ubuntu/Manjaro), więc cała dokumentacja została stworzona w oparciu o ten system
